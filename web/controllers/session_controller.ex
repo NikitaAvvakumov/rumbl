@@ -1,7 +1,6 @@
 defmodule Rumbl.SessionController do
   use Rumbl.Web, :controller
 
-  alias Rumbl.User
   alias Rumbl.Repo
 
   def new(conn, _) do
