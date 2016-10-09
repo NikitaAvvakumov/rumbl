@@ -26,6 +26,7 @@ defmodule Rumbl.User do
     |> validate_required(~w(password)a)
     |> validate_length(:password, min: 6, max: 100)
     |> put_pass_hash()
+    |> put_change(:password, nil)
   end
 
   defp put_pass_hash(changeset) do
