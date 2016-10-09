@@ -37,11 +37,10 @@ defmodule Rumbl.UserTest do
 
   test "registration_changeset with valid attrs hashes password" do
     changeset = User.registration_changeset(%User{}, @valid_attrs)
-    %{password_hash: pass_hash} = changeset.changes
+    %{password: pass, password_hash: pass_hash} = changeset.changes
 
     assert changeset.valid?
     assert pass_hash
-    assert Comeonin.Bcrypt.checkpw(@valid_attrs[:password], pass_hash)
-    refute Map.has_key?(changeset, :password)
+    assert Comeonin.Bcrypt.checkpw(pass, pass_hash)
   end
 end
