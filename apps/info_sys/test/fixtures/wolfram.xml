@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='2'
+    datatypes=''
+    timedout=''
+    timedoutpods=''
+    timing='0.735'
+    parsetiming='0.18'
+    parsetimedout='false'
+    recalculate='http://www5b.wolframalpha.com/api/v2/recalc.jsp?id=MSPa7436226e4d3ga1571agb000048fch3i0fbgibcbf6358594749880427603'
+    id='MSPa7437226e4d3ga1571agb00002dc3h937iffd6b62'
+    host='http://www5b.wolframalpha.com'
+    server='64'
+    related='http://www5b.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa7438226e4d3ga1571agb000061f0a7i0h05h3heg6358594749880427603'
+    version='2.6'>
+ <pod title='Input interpretation'
+     scanner='Identity'
+     id='Input'
+     position='100'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>To be or not to be...</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Result'
+     scanner='Data'
+     id='Result'
+     position='200'
+     error='false'
+     numsubpods='1'
+     primary='true'>
+  <subpod title=''>
+   <plaintext>...that is the question.
+(according to Prince Hamlet in William Shakespeare&apos;s play, Hamlet)</plaintext>
+  </subpod>
+ </pod>
+ <assumptions count='1'>
+  <assumption type='Clash'
+      word='to be'
+      template='Assuming &quot;${word}&quot; is ${desc1}. Use as ${desc2} instead'
+      count='2'>
+   <value name='Miscellaneous'
+       desc='a phrase'
+       input='*C.to+be-_*Miscellaneous-' />
+   <value name='FutureTopic'
+       desc='an English grammar topic'
+       input='*C.to+be-_*FutureTopic-' />
+  </assumption>
+ </assumptions>
+</queryresult>

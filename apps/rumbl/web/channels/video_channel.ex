@@ -65,7 +65,7 @@ defmodule Rumbl.VideoChannel do
 
       case Repo.insert(info_changeset) do
         {:ok, info_annotation} -> broadcast_annotation(socket, info_annotation)
-        {:error, changeset} -> :ignore
+        {:error, _changeset} -> :ignore
       end
     end
   end

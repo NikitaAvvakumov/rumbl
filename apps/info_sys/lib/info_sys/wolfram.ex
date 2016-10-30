@@ -2,6 +2,8 @@ defmodule InfoSys.Wolfram do
   import SweetXml
   alias InfoSys.Result
 
+  @http Application.get_env(:info_sys, :wolfram)[:http_client] || :httpc
+
   def start_link(query, query_ref, owner, limit) do
     Task.start_link(__MODULE__, :fetch, [query, query_ref, owner, limit])
   end
@@ -27,7 +29,7 @@ defmodule InfoSys.Wolfram do
     app_id_param = "?appid=#{app_id()}"
     input_param = "&input=#{URI.encode(query_str)}&format=plaintext"
     query_url = api_url <> app_id_param <> input_param
-    {:ok, {_, _, body}} = :httpc.request(String.to_char_list(query_url))
+    {:ok, {_, _, body}} = @http.request(String.to_char_list(query_url))
     body
   end
 
